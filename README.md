@@ -1,6 +1,6 @@
 # Miniblog
 
-**Miniblog** is an extremely minimal and opinionated blogging template built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), heavily inspired by [jrmyphlmn.com](https://jrmyphlmn.com/).
+**Miniblog** is an opinionated and extremely minimal blogging template built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), heavily inspired by [jrmyphlmn.com](https://jrmyphlmn.com/).
 
 - Blog post authoring using [Markdown](https://www.markdownguide.org/) and [MDX](https://mdxjs.com/) for component-style content
 - Code block syntax highlighting with [Shiki](https://github.com/shikijs/shiki)
