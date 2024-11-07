@@ -59,9 +59,11 @@
         @apply border-b bg-neutral-50 p-4;
       }
     }
-    ol,
+    ol {
+      @apply my-1 list-inside list-decimal space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
+    }
     ul {
-      @apply list-inside list-[revert] space-y-0 [&_ol]:pl-5 [&_ul]:pl-5;
+      @apply my-1 list-inside list-disc space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
     }
     kbd {
       @apply rounded border border-b-2 bg-neutral-100 px-1 py-0.5 font-mono text-xs font-medium text-black;
