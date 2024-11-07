@@ -72,7 +72,7 @@ All Markdown-specific CSS styling is customizable in `src/styles/global.css`:
 ```css
 @layer components {
   article {
-   /* ... */
+    /* ... */
   }
 }
 ```
