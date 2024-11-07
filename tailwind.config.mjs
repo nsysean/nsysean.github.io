@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Uncut Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ["Geist", ...defaultTheme.fontFamily.sans],
+        mono: ["'Geist Mono'", ...defaultTheme.fontFamily.mono],
       },
     },
   },
