@@ -1,68 +1,82 @@
-# Astro Starter Kit: Blog
+# Miniblog
 
-```sh
-npm create astro@latest -- --template blog
+**Miniblog** is an extremely minimal and opinionated blogging template built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), heavily inspired by [jrmyphlmn.com](https://jrmyphlmn.com/).
+
+- Blog post authoring using [Markdown](https://www.markdownguide.org/) and [MDX](https://mdxjs.com/) for component-style content
+- Code block syntax highlighting with [Shiki](https://github.com/shikijs/shiki)
+- [RSS](https://en.wikipedia.org/wiki/RSS) feed and sitemap generation
+- SEO optimization
+- Code formatting with [Prettier](https://prettier.io/)
+
+## Getting Started
+
+1. Click "Use this template", the big green button on the top right, to create a new repository with this template.
+
+2. Clone the repository:
+
+```bash
+git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPO_NAME].git
+cd [YOUR_REPO_NAME]
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+3. Install dependencies:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+4. Start the development server:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run dev
+```
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+5. Optionally, format your code after making changes:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run format
+```
 
-## 🧞 Commands
+## Customization
 
-All commands are run from the root of the project, from a terminal:
+**Miniblog** purposely keeps itself minimal, relying on no other web framework than Astro, and keeping styling simple through Tailwind and traditional CSS.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Site Configuration
 
-## 👀 Want to learn more?
+Edit the `src/consts.ts` file to update your information and site's metadata:
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```ts
+export const SITE_URL = "https://miniblog.nicholasly.com";
+export const SITE_TITLE = "Miniblog";
+export const SITE_DESCRIPTION = "Welcome to my website!";
 
-## Credit
+export const EMAIL = "hello@nicholasly.com";
+```
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+### Blog Posts
+
+Add new blog posts as Markdown or MDX files in the `src/content/posts/` directory. Use the following frontmatter structure:
+
+```yml
+---
+title: "Lorem Ipsum"
+description: "Lorem ipsum dolor sit amet."
+date: "Nov 06 2024"
+---
+```
+
+### Markdown Styling
+
+All Markdown-specific CSS styling is customizable in `src/styles/global.css`:
+
+```css
+@layer components {
+  article {
+   /* ... */
+  }
+}
+```
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
