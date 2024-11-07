@@ -40,6 +40,22 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ![blog placeholder](/blog-placeholder-about.jpg)
 
+## Videos
+
+### Syntax
+
+```markdown
+<video controls>
+  <source src="/dynamic-island-animation.mp4" type="video/mp4">
+</video>
+```
+
+### Output
+
+<video controls>
+  <source src="/dynamic-island-animation.mp4" type="video/mp4">
+</video>
+
 ## Blockquotes
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
