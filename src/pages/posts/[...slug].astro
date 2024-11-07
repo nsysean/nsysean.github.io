@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../lib/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -17,12 +17,12 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-  <main class="mx-auto flex max-w-lg flex-col justify-center gap-4 p-4">
-    <article class="mt-12">
-      <h1 class="text-xl">{post.data.title}</h1>
-      <p class="my-5 text-neutral-400">
-        <FormattedDate date={post.data.date} />
-      </p>
+  <main class="mx-auto my-12 flex max-w-lg flex-col justify-center gap-5 p-4">
+    <h1 class="text-xl font-medium">{post.data.title}</h1>
+    <p class="font-medium text-neutral-500">
+      {formatDate(post.data.date)}
+    </p>
+    <article>
       <Content />
     </article>
   </main>

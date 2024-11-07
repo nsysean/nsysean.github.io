@@ -52,7 +52,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
-  <body>
+  <body class="font-sans text-neutral-900 antialiased">
     <Header />
     <slot />
   </body>

@@ -5,11 +5,13 @@ import { EMAIL, SITE_TITLE } from "../consts";
 <header class="h-10 px-4 py-2">
   <nav class="flex items-center justify-between">
     <div>
-      <a href="/" class="text-neutral-400 hover:underline">{SITE_TITLE}</a>
+      <a href="/" class="font-medium text-neutral-500 hover:underline"
+        >{SITE_TITLE}</a
+      >
     </div>
     <div class="flex items-center gap-4">
-      <a href="/posts" class="hover:underline">Posts</a>
-      <a href={`mailto:${EMAIL}`} class="hover:underline">Email</a>
+      <a href="/posts" class="font-medium hover:underline">Posts</a>
+      <a href={`mailto:${EMAIL}`} class="font-medium hover:underline">Email</a>
     </div>
   </nav>
 </header>

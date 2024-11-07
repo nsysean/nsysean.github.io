@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../lib/utils";
 
 const collection = await getCollection("posts");
 const posts = collection.sort(
@@ -11,16 +11,14 @@ const posts = collection.sort(
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main class="mx-auto flex max-w-lg flex-col justify-center gap-4 p-4">
-    <ul class="mt-12 flex flex-col gap-1.5">
+  <main class="mx-auto my-12 flex max-w-lg flex-col justify-center p-4">
+    <ul class="flex flex-col gap-1.5">
       {
         posts.map((post) => (
           <li>
             <a href={`/posts/${post.slug}/`} class="group flex justify-between">
               <span class="group-hover:underline">{post.data.title}</span>
-              <span class="text-neutral-400">
-                <FormattedDate date={post.data.date} />
-              </span>
+              <span class="text-neutral-500">{formatDate(post.data.date)}</span>
             </a>
           </li>
         ))
