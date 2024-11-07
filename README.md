@@ -5,7 +5,7 @@
 - Blog post authoring using [Markdown](https://www.markdownguide.org/) and [MDX](https://mdxjs.com/) for component-style content
 - Code block syntax highlighting with [Shiki](https://github.com/shikijs/shiki)
 - [RSS](https://en.wikipedia.org/wiki/RSS) feed and sitemap generation
-- SEO optimization
+- SEO optimization, with customizable OpenGraph image support
 - Code formatting with [Prettier](https://prettier.io/)
 
 ## Getting Started
