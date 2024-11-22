@@ -3,12 +3,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main
-    class="mx-auto flex h-[calc(100svh-40px)] max-w-xs flex-col justify-center gap-4 p-4"
-  >
+<Layout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  className="flex h-svh max-w-sm flex-col justify-center"
+>
+  <main class="space-y-4">
     <p>
-      miniblog is an opinionated and extremely minimal blogging template built
+      Miniblog is an opinionated and extremely minimal blogging template built
       with <a
         href="https://astro.build/"
         target="_blank"
