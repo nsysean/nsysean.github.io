@@ -13,6 +13,14 @@
     src: url("/fonts/geist-mono-variable.woff2") format("woff2");
     font-display: swap;
   }
+  html.dark .astro-code,
+  html.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
 
 @layer components {
@@ -21,28 +29,28 @@
       @apply my-4 leading-relaxed;
     }
     h1 {
-      @apply my-4 text-xl font-medium;
+      @apply my-4 text-xl font-medium dark:font-semibold dark:text-white;
     }
     h2 {
-      @apply my-4 text-lg font-medium;
+      @apply my-4 text-lg font-medium dark:font-semibold dark:text-white;
     }
     h3,
     h4,
     h5,
     h6 {
-      @apply my-4 font-medium;
+      @apply my-4 font-medium dark:font-semibold dark:text-white;
     }
     :not(pre) > code {
-      @apply rounded border bg-neutral-200/50 px-1 py-0.5 font-mono text-sm font-medium text-black;
+      @apply rounded border bg-neutral-200/50 px-1 py-0.5 font-mono text-sm font-medium text-black dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-white;
     }
     pre:has(code) {
-      @apply my-4 max-h-[600px] overflow-auto rounded-lg border bg-neutral-900/50 p-4 font-mono text-sm font-medium;
+      @apply my-4 max-h-[600px] overflow-auto rounded-lg border p-4 font-mono text-sm font-medium dark:border-neutral-700;
     }
     img {
-      @apply my-4 rounded-lg border;
+      @apply my-4 rounded-lg border dark:border-neutral-700;
     }
     video {
-      @apply my-4 rounded-lg border;
+      @apply my-4 rounded-lg border dark:border-neutral-700;
     }
     blockquote {
       @apply my-4 border-l-2 pl-4;
@@ -53,10 +61,10 @@
     table {
       @apply my-4 w-full table-auto border-collapse text-sm;
       th {
-        @apply border-b p-4 text-left font-medium;
+        @apply border-b p-4 text-left font-medium dark:border-neutral-700;
       }
       td {
-        @apply border-b bg-neutral-50 p-4;
+        @apply border-b bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800;
       }
     }
     ol {
@@ -66,7 +74,10 @@
       @apply my-1 list-inside list-disc space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
     }
     kbd {
-      @apply rounded border border-b-2 bg-neutral-100 px-1 py-0.5 font-mono text-xs font-medium text-black;
+      @apply rounded border border-b-2 bg-neutral-100 px-1 py-0.5 font-mono text-xs font-medium text-black dark:border-neutral-700 dark:bg-neutral-800 dark:text-white;
+    }
+    mark {
+      @apply dark:bg-yellow-500/50 dark:text-white;
     }
   }
 }

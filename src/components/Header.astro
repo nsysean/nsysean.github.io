@@ -1,25 +1,19 @@
 ---
 import { EMAIL } from "../consts";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="mb-6" transition:name="header">
+<header class="mb-6 flex items-center justify-between" transition:name="header">
   <nav class="flex items-center gap-4">
-    <a
-      href="/"
-      class="font-medium text-neutral-500 hover:text-neutral-900 hover:underline"
-    >
-      home
-    </a>
-    <a
-      href="/posts"
-      class="font-medium text-neutral-500 hover:text-neutral-900 hover:underline"
-    >
-      posts
-    </a>
-    <a
-      href={`mailto:${EMAIL}`}
-      class="font-medium text-neutral-500 hover:text-neutral-900 hover:underline"
-      >email</a
-    >
+    <a href="/"> home </a>
+    <a href="/posts"> posts </a>
+    <a href={`mailto:${EMAIL}`}>email</a>
   </nav>
+  <ThemeToggle />
 </header>
+
+<style>
+  a {
+    @apply font-medium text-neutral-500 hover:text-neutral-900 hover:underline dark:hover:text-neutral-100;
+  }
+</style>
