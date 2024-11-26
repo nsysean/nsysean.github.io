@@ -24,7 +24,7 @@ I could have very much stuck with vanilla CSS, but I prefer to use [Tailwind CSS
 
 You don't need [ESLint](https://eslint.org/) for a small application like a blog. ESLint is a fantastic tool, especially for larger projects with equally large teams, but it simply isn't necessary for a blog in which you're most likely the only developer. Save yourself the headache.
 
-I do have [Prettier](https://prettier.io/), which is arguably just as unnecessary as ESLint if you're the only contributor, but since this template is open source, a code formatter is pretty useful.
+I do have [Prettier](https://prettier.io/), which is arguably just as unnecessary as ESLint if you're the only contributor, but since this template is open source, a code formatter is pretty useful. You may also be writing and sharing code in your blog posts, so Prettier just makes it easier for the majority to read your code.
 
 You don't need analytics. Again, analytic tools like [Umami](https://umami.is/) are fantastic, but aren't really necessary for a simple blog. You probably won't get that many visitors, and what significant value do you get from tracking them?
 
