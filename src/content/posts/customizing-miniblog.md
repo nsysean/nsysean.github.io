@@ -13,11 +13,11 @@ All blog posts should be saved as [Markdown](https://www.markdownguide.org/) or 
 title: "Customizing Miniblog"
 description: "How to customize the Miniblog blog theme."
 date: "Nov 26 2024"
-image: "/blog-placeholder.svg"
+image: "/static/blog-placeholder.png"  
 ---
 ```
 
-> Note that the `image` frontmatter property is optional, and will by default use `/blog-placeholder.svg`. You may update this by replacing the `blog-placeholder.svg` file in the `public/static/` directory with a file of your choice with the same name.
+> Note that the `image` frontmatter property is optional, and will by default use `/static/blog-placeholder.png`. You may update this by replacing the `/static/blog-placeholder.png` file in the `public/static/` directory with a file of your choice with the same name.
 
 ## Codeblock Syntax Highlighting
 
@@ -27,7 +27,7 @@ Astro has Markdown codeblock syntax highlighting out of the box by using [Shiki]
 
 As mentioned in the [Blog Posts](#blog-posts) section above, a default OpenGraph image is provided for all pages of the site.
 
-To update the site-wide, default OpenGraph image, replace the `blog-placeholder.svg` file in the `public/static/` directory with a file of your choice with the same name.
+To update the site-wide, default OpenGraph image, replace the `/static/blog-placeholder.png` file in the `public/static/` directory with a file of your choice with the same name.
 
 To add a unique OpenGraph image for a specific blog post, add the new image to the `public/static/` directory, and update the `image` frontmatter property for the respective blog post to use the new image.
 
