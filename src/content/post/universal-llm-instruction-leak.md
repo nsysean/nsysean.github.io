@@ -63,4 +63,6 @@ I participated in NuttyShell CTF 2024 recently, and there were four LLM challeng
 For those unfamiliar with CTFs, you basically have to exploit vulnerabilities to get a "flag", which is a secret string hidden from you.
 
 I tried to use the payload on these four challenges, and solved them all within a minute.
+
+(For reference, the team which solved all these four challenges first took at least 20 minutes and used a story based prompt to leak only the flag)
 ![image](/images/upload_0ac3327d6f7ac499a29a66a4c38bdec4.png)
