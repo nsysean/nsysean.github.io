@@ -1,6 +1,6 @@
 ---
 title: DOMPurify 3.2.3 Bypass (Non-Default Config)
-excerpt: A write up of a bypass in DOMPurify 3.2.3 I found
+excerpt: A write up of a bypass in DOMPurify 3.2.3 I found (CVE-2025-26791)
 publishDate: 'Jan 29 2025'
 tags:
   - Write Up
@@ -81,3 +81,4 @@ DOMPurify.sanitize(
 - https://github.com/cure53/DOMPurify/releases/tag/3.2.4
 - https://github.com/cure53/DOMPurify/commit/d18ffcb554e0001748865da03ac75dd7829f0f02
 - https://yaniv-git.github.io/2024/12/08/DOMPurify%203.2.1%20Bypass%20(Non-Default%20Config)/
+- https://nvd.nist.gov/vuln/detail/CVE-2025-26791

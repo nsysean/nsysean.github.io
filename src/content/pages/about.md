@@ -7,7 +7,7 @@ I'm Sean, a secondary school student from Hong Kong who's interested in all thin
 
 ## Research
 - [CVE-2025-23207 - KaTeX](https://github.com/KaTeX/KaTeX/security/advisories/GHSA-cg87-wmx4-v546)
-- [DOMPurify 3.2.3 Bypass](/posts/dompurify-323-bypass/)
+- [CVE-2025-26791 - DOMPurify 3.2.3 Bypass](/posts/dompurify-323-bypass/)
 - More to be verified... (^v^)
 
 ## Awards

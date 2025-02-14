@@ -1,7 +1,7 @@
 ---
 title: Universal LLM Instruction Leak
 excerpt: A blog about a (nearly) universal prompt which leaks LLM instructions
-publishDate: 'Jan 29 2025'
+publishDate: 'Feb 12 2025'
 tags:
   - LLM
 isFeatured: true
