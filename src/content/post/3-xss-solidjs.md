@@ -1,7 +1,7 @@
 ---
 title: 3 XSS Vulnerabilities discovered in SolidJS
-excerpt: A write up of some XSS vulnerabilities I found in SolidJS
-publishDate: 'Feb 19 2025'
+excerpt: Write up of 3 XSS vulnerabilities I found in SolidJS with 2 CVEs
+publishDate: 'Feb 22 2025'
 tags:
   - Write Up
   - XSS
@@ -9,12 +9,10 @@ isFeatured: true
 ---
 
 ### Introduction
-At the beginning of the year, while I was using SolidJS to develop some project, I noticed some weird behaviour and attempted to investigate the bugs behind it. In the end, I found 2 XSS vulnerabilities and 1 NoFix.
+At the beginning of the year, while I was using SolidJS to develop some project, I noticed some weird behaviour and attempted to investigate the bugs behind it. In the end, I found 2 XSS vulnerabilities with CVEs and 1 NoFix.
 
-### XSS in JSX fragments
-In short, **dom-expressions**, the underlying library for SolidJS by @ryansolid does not sanitize text elements in JSX fragments. 
-
-Link to relevant source code: https://github.com/ryansolid/dom-expressions/blob/main/packages/babel-plugin-jsx-dom-expressions/src/shared/transform.js
+### XSS in JSX fragments (CVE-2025-27109)
+In short, the `ssr` function in SolidJS fails to sanitize JSX expressions in JSX fragments.
 
 PoC
 ```js
@@ -23,12 +21,25 @@ PoC
   console.log(ssr("!!", <>{"<div></div>"}</>));
   // { t: '!<div></div>!' }
 ```
+```js
+const [text] = createResource(() => {
+  return new URL(getRequestEvent().request.url).searchParams.get("text");
+});
 
-Interestingly, the team told me that this was actually intended behaviour, so they fixed it by again escaping text in SolidJS itself. https://github.com/solidjs/solid/commit/b93956f28ed75469af6976a98728e313d0edd236
+return (
+  <>
+    Text: {text()}
+  </>
+);
+```
+
+Apparently the function was imported from `dom-expressions`, a library for developing front-end frameworks by @ryansolid. However, the team forgot to update the replica in SolidJS when they applied escaping to `dom-expressions`. 
+
+Advisory: https://github.com/solidjs/solid/security/advisories/GHSA-3qxh-p7jc-5xh6
 
 This was the bug I found accidentally while working with SolidJS.
 
-### XSS in meta tags
+### XSS in meta tags (CVE-2025-27108)
 I was curious as to whether I could find more vulns after the previous finding, so I went ahead and looked around their discord server. I found [this issue](https://github.com/solidjs/solid-meta/issues/54) which mentioned that `$'` in the meta tag breaks ssr. 
 
 Does this look familiar? If you have seen my [write up on web/submission](/posts/2025-lactf-antisocial-media/), you may immediately recognise this as the **special replacement patterns** of the `.replace` function in JavaScript. *I have explained the feature in detail in that blog, please take a look at that write up if you want to know about how .replace works.*
@@ -54,7 +65,7 @@ export default function App() {
 }
 ```
 
-Fix: https://github.com/ryansolid/dom-expressions/commit/521f75dfa89ed24161646e7007d9d7d21da07767
+Advisory: https://github.com/ryansolid/dom-expressions/security/advisories/GHSA-hw62-58pr-7wc5
 
 ### XSS in noscript
 To summarize, I found that the sanitize function which SolidJS does not sanitize the `<` character in attributes, which is quite [a well-known trick](https://www.acunetix.com/blog/web-security-zone/mutation-xss-in-google-search/).
@@ -76,3 +87,5 @@ https://github.com/solidjs/solid-docs/pull/1090
 - https://github.com/ryansolid/dom-expressions/commit/521f75dfa89ed24161646e7007d9d7d21da07767
 - https://www.acunetix.com/blog/web-security-zone/mutation-xss-in-google-search/
 - https://github.com/solidjs/solid-docs/pull/1090
+- https://github.com/ryansolid/dom-expressions/security/advisories/GHSA-hw62-58pr-7wc5
+- https://github.com/solidjs/solid/security/advisories/GHSA-3qxh-p7jc-5xh6
