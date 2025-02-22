@@ -5,6 +5,10 @@ publishDate: 'Jan 29 2025'
 tags:
   - Write Up
   - XSS
+seo:
+  image:
+    src: '/images/dompurify-thumbnail.png'
+    alt: XSS in DOMPurify
 isFeatured: true
 ---
 
