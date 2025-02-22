@@ -5,6 +5,10 @@ publishDate: 'Feb 22 2025'
 tags:
   - Write Up
   - XSS
+seo:
+  image:
+    src: '/images/solid-thumbnail.png'
+    alt: XSS in SolidJS
 isFeatured: true
 ---
 
