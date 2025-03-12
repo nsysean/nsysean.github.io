@@ -12,7 +12,7 @@ I'm Sean, a secondary school student from Hong Kong who's interested in all thin
 - [CVE-2025-27109 - SolidJS](https://nvd.nist.gov/vuln/detail/CVE-2025-27109) [Writeup](/posts/3-xss-solidjs)
 
 ## Projects
-- [DBS Mother's Choice Website](https://mc.chall.mov/)
+- [DBS Mother's Choice Website](https://dbsmotherschoice.com/)
 - [Binary Search Game](https://dbs.chall.mov)
 
 ## Awards
