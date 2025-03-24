@@ -10,11 +10,11 @@ I'm Sean, a secondary school student from Hong Kong who's interested in all thin
 - [CVE-2025-26791 - DOMPurify](https://nvd.nist.gov/vuln/detail/CVE-2025-26791) [Writeup](/posts/dompurify-323-bypass)
 - [CVE-2025-27108 - DOM Experssions(SolidJS)](https://nvd.nist.gov/vuln/detail/CVE-2025-27108) [Writeup](/posts/3-xss-solidjs)
 - [CVE-2025-27109 - SolidJS](https://nvd.nist.gov/vuln/detail/CVE-2025-27109) [Writeup](/posts/3-xss-solidjs)
-<!--
+
 ## Projects
-- [DBS Mother's Choice Website](https://dbsmotherschoice.com/)
+- [Mother's Choice YLC Website](https://dbsmotherschoice.com/)
 - [Binary Search Game](https://dbs.chall.mov)
--->
+
 ## Awards
 - Finals & 1st place in heats - HKCERT CTF 2024 Secondary Division
 - Silver - Hong Kong Olympiad in Informatics Junior 2024
