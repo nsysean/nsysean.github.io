@@ -28,7 +28,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath,      remarkSlug,
       // @ts-ignore
       [remarkAutolinkHeadings, {
-        behavior: 'wrap' // This is important to make the whole heading clickable
+        behavior: 'wrap' 
       }],],
     rehypePlugins: [rehypeKatex],
   },
