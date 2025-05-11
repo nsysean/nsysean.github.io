@@ -9,31 +9,186 @@ import Layout from "../layouts/Layout.astro";
   className="flex h-svh max-w-sm flex-col justify-center"
 >
   <main class="space-y-4">
-    <p>
-      Miniblog is an opinionated and extremely minimal blogging template built
-      with <a
-        href="https://astro.build/"
-        target="_blank"
-        class="text-blue-500 underline">Astro</a
-      > and <a
-        href="https://tailwindcss.com/"
-        target="_blank"
-        class="text-blue-500 underline">Tailwind</a
-      >.
-    </p>
-    <p>
-      Design heavily inspired by <a
-        href="https://jrmyphlmn.com/"
-        target="_blank"
-        class="text-blue-500 underline">jrmyphlmn.com</a
-      >.
-    </p>
-    <p>
-      To use this template, check out the <a
-        href="https://github.com/nicholasdly/miniblog?tab=readme-ov-file"
-        target="_blank"
-        class="text-blue-500 underline">GitHub repository</a
-      >.
-    </p>
+    <h2>ensy.zip</h2>
+    Hi! I'm <b>ensy</b>
+    <em>[Sean Ng]</em>, a programmer and CTF player from <u>Hong Kong</u> o/
+    <div>
+      <a href="https://x.com/ensyzip">Twitter</a>
+      <a href="https://github.com/nsysean">Github</a>
+      <a href="https://discord.com/users/603448257653374976">Discord</a>
+      <a href="mailto:ensy.zip@gmail.com">Email</a>
+    </div>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm a <u>secondary school student</u> who's interested in all things programming.<br
+        />
+      </p>
+      <p>
+        CTF player for
+        <a href="https://ctftime.org/team/83678/">Black Bauhinia</a>, and have
+        done <a href="#research">independent security research</a>.<br />
+        Also enjoys being a hobbyist <u>full stack developer</u> and <u
+          >competitive programmer</u
+        >.<br />
+      </p>
+    </section>
+    <section id="research">
+      <h2>CVE</h2>
+      <table>
+        <tr>
+          <th>CVE-2025-23207</th>
+          <th><a href="https://katex.org/">KaTeX</a></th>
+          <th>
+            <a
+              href="https://github.com/KaTeX/KaTeX/security/advisories/GHSA-cg87-wmx4-v546"
+              >GHSA-cg87-wmx4-v546</a
+            >
+          </th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>CVE-2025-26791</th>
+          <th>
+            <a href="https://github.com/cure53/DOMPurify">DOMPurify</a>
+          </th>
+          <th>
+            <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-26791">NVD</a>
+          </th>
+          <th><a href="/posts/dompurify-323-bypass">Write-up</a></th>
+        </tr>
+        <tr>
+          <th>CVE-2025-27108</th>
+          <th>
+            <a href="https://github.com/ryansolid/dom-expressions"
+              >DOM Expressions</a
+            >
+          </th>
+          <th>
+            <a
+              href="https://github.com/ryansolid/dom-expressions/security/advisories/GHSA-hw62-58pr-7wc5"
+              >GHSA-hw62-58pr-7wc5</a
+            >
+          </th>
+          <th><a href="/posts/3-xss-solidjs">Write-up</a></th>
+        </tr>
+        <tr>
+          <th>CVE-2025-27109</th>
+          <th><a href="https://www.solidjs.com">SolidJS</a></th>
+          <th>
+            <a
+              href="https://github.com/solidjs/solid/security/advisories/GHSA-3qxh-p7jc-5xh6"
+              >GHSA-3qxh-p7jc-5xh6</a
+            >
+          </th>
+          <th><a href="/posts/3-xss-solidjs">Write-up</a></th>
+        </tr>
+        <tr>
+          <th>CVE-2025-22872</th>
+          <th><a href="https://github.com/golang/net">golang/net</a></th>
+          <th>
+            <a href="https://pkg.go.dev/vuln/GO-2025-3595">GO-2025-3595</a>
+          </th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>CVE-2025-29049</th>
+          <th><a href="https://cortexjs.io/mathlive/">MathLive</a></th>
+          <th>
+            <a href="https://github.com/advisories/GHSA-qwj6-q94f-8425"
+              >GHSA-qwj6-q94f-8425
+            </a>
+          </th>
+          <th></th>
+        </tr>
+      </table>
+    </section>
+    <section id="results">
+      <h2>Results</h2>
+      <ul>
+        <li>First place - NuttyShell CTF 2025 Secondary Division</li>
+        <li>
+          Finalist - First International Cybersecurity Olympiad
+          <em>(Result TBD)</em>
+        </li>
+        <li>
+          Finals & 1st place in heats - HKCERT CTF 2024 Secondary Division
+        </li>
+        <li>Silver - Hong Kong Olympiad in Informatics Junior 2024</li>
+        <li>8th Individual - AlpacaHack Round 2 <em>(Web)</em></li>
+        <li>First place - NuttyShell CTF 2024 Secondary Division</li>
+        <li>Second place - HKCERT CTF 2023 Secondary Division</li>
+      </ul>
+    </section>
   </main>
 </Layout>
+<style>
+  p {
+    @apply my-4 leading-relaxed;
+  }
+  h1 {
+    @apply my-4 text-4xl font-extrabold dark:text-neutral-200;
+  }
+  h2 {
+    @apply my-4 text-2xl font-bold dark:text-neutral-200;
+  }
+  h3 {
+    @apply my-4 text-xl font-semibold dark:text-neutral-300;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply my-4 font-semibold dark:text-neutral-400;
+  }
+  /* h3,
+    h4,
+    h5,
+    h6 {
+      @apply my-4 font-medium dark:text-white;
+    } */
+  :not(pre) > code {
+    @apply whitespace-nowrap rounded border bg-zinc-200/50 px-1 py-0.5 font-mono text-sm font-medium text-black dark:border-zinc-700 dark:bg-zinc-800/50 dark:text-neutral-200;
+  }
+  pre:has(code) {
+    @apply my-4 max-h-[600px] overflow-auto rounded-lg border p-4 font-mono text-sm font-medium dark:border-zinc-700;
+  }
+  img {
+    @apply relative left-[calc(-2.5%)] my-4 max-w-[105%] rounded-lg border dark:border-zinc-700;
+  }
+  video {
+    @apply relative left-[calc(-2.5%)] my-4 max-w-[105%] rounded-lg border dark:border-zinc-700;
+  }
+  figcaption {
+    @apply text-center;
+  }
+  blockquote {
+    @apply my-4 border-l-2 border-neutral-200 pl-4;
+  }
+  *:not(h1, h2, h3, h4, h5, h6) a {
+    @apply text-neutral-700 underline dark:text-neutral-300;
+  }
+  strong {
+    @apply text-neutral-700 dark:text-neutral-300;
+  }
+  table {
+    @apply my-4 w-full table-auto border-collapse text-sm;
+    th {
+      @apply border-b p-4 text-left font-medium dark:border-zinc-700;
+    }
+    td {
+      @apply border-b bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800;
+    }
+  }
+  ol {
+    @apply my-1 list-inside list-decimal space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
+  }
+  ul {
+    @apply my-1 list-inside list-disc space-y-1 [&_ol]:pl-5 [&_ul]:pl-5;
+  }
+  kbd {
+    @apply rounded border border-b-2 bg-zinc-100 px-1 py-0.5 font-mono text-xs font-medium text-black dark:border-zinc-700 dark:bg-zinc-800 dark:text-white;
+  }
+  mark {
+    @apply dark:bg-yellow-500/20 dark:text-white;
+  }
+</style>

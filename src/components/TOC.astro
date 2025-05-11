@@ -1,0 +1,38 @@
+---
+import type { MarkdownHeading } from "astro";
+// import { ui } from '@/i18n/ui'
+// import { getPageInfo } from '@/utils/page'
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+// const { currentLang } = getPageInfo(Astro.url.pathname)
+// const currentUI = ui[currentLang as keyof typeof ui]
+
+const { headings = [] } = Astro.props;
+const filteredHeadings = headings.filter(
+  (heading) => heading.depth >= 2 && heading.depth <= 4,
+);
+---
+
+<div class="fixed left-0 ml-6 hidden max-w-[300px] xl:block">
+  {
+    filteredHeadings.map((heading) => (
+      <div
+        class:list={{
+          "ml-0": heading.depth === 2,
+          "ml-4": heading.depth === 3,
+          "ml-8": heading.depth === 4,
+        }}
+      >
+        <a
+          href={"#" + heading.slug}
+          class="text-balanced text-sm text-neutral-600 dark:text-neutral-400"
+        >
+          {heading.text}
+        </a>
+      </div>
+    ))
+  }
+</div>

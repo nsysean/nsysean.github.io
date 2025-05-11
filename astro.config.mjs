@@ -7,6 +7,12 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { SITE_URL } from "./src/consts";
 
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
+import remarkSlug from 'remark-slug';
+import remarkAutolinkHeadings from 'remark-autolink-headings';
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
@@ -14,9 +20,16 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       themes: {
-        light: "catppuccin-latte",
-        dark: "catppuccin-mocha",
+        light: "vitesse-light",
+        dark: "vitesse-dark",
       },
     },
+    // @ts-ignore
+    remarkPlugins: [remarkMath,      remarkSlug,
+      // @ts-ignore
+      [remarkAutolinkHeadings, {
+        behavior: 'wrap' // This is important to make the whole heading clickable
+      }],],
+    rehypePlugins: [rehypeKatex],
   },
 });
